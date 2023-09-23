@@ -1,0 +1,146 @@
+.subscribe-button {
+    background-color: rgb(200, 0, 0);
+    color: white;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-right: 8px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 16px;
+    padding-right: 16px;
+    vertical-align: top;
+    transition: opacity 0.15s;
+}
+
+.subscribe-button:hover {
+    opacity: 0.8;
+}
+
+.subscribe-button:active {
+    opacity: 0.5;
+}
+
+.join-button {
+    background-color: white;
+    border-color: rgb(6, 95, 212);
+    border-style: solid;
+    border-width: 1px;
+    color: rgb(6, 95, 212);
+    border-radius: 2px;
+    cursor: pointer;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    padding-left: 16px;
+    padding-right: 16px;
+    vertical-align: top;
+    transition: background-color 0.15s,
+        color 0.15s;
+}
+
+.join-button:hover {
+    background-color: rgb(6, 95, 212);
+    color: white;
+}
+
+.join-button:active {
+    opacity: 0.7;
+}
+
+.tweet-button {
+    background-color: rgb(29, 155, 240);
+    color: white;
+    border: none;
+    border-radius: 18px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    padding-left: 16px;
+    padding-right: 16px;
+    vertical-align: top;
+    margin-left: 8px;
+    transition: box-shadow 0.15s;
+    vertical-align: top;
+}
+
+.tweet-button:hover {
+    box-shadow:5px 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.tweet-button:active {
+    opacity: 0.7;
+}
+
+.uber-button {
+    margin-left: 8px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 16px;
+    padding-right: 16px;
+    vertical-align: top;
+    cursor: pointer;
+    transition: opacity 0.15s;
+}
+
+.uber-button:hover {
+    opacity: 0.8;
+}
+
+.uber-button:active {
+    opacity: 0.5;
+}
+
+.amazon-button {
+    background-color: rgb(255, 216, 20);
+    color: black;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 30px;
+    padding-right: 30px;
+    vertical-align: middle;
+    cursor: pointer;
+    border: none;
+    border-radius: 18px;
+    margin-left: 8px;
+    transition: opacity 0.15s,
+        box-shadow 0.15s;
+}
+
+.amazon-button:hover {
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
+}
+
+.amazon-button:active {
+    opacity: 0.5;
+}
+
+.github-button {
+    margin-left: 8px;
+    background-color: rgb(46, 164, 79);
+    color: white;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 16px;
+    padding-right: 16px;
+    vertical-align: top;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: box-shadow 0.15s,
+        opacity 0.15s;
+}
+
+.github-button:hover {
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
+}
+
+.github-button:active {
+    opacity: 0.5;
+}
