@@ -1,0 +1,13 @@
+body {
+  font-family: Consolas;
+}
+
+.service-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.service-card {
+  border: 1px solid black;
+  flex: 50% 50% 50% 50%;
+}
