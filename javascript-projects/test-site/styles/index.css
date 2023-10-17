@@ -1,5 +1,25 @@
 body {
   font-family: Consolas;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 50px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 25px;
+  text-align: center;
+}
+
+section {
+  padding-top: 50px;
 }
 
 .service-container {
@@ -8,6 +28,25 @@ body {
 }
 
 .service-card {
-  border: 1px solid black;
-  flex: 50% 50% 50% 50%;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  flex: 0 0 auto;
+  padding: 15px;
+  color: black;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+  min-width: 200px;
+  max-width: 200px;
+  
+}
+
+
+.service-card:hover {
+  transform: translate(3px, -3px);
+}
+
+.card-icon {
+  text-align: center;
+  font-size: 30px;
 }
