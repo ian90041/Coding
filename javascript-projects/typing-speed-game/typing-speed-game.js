@@ -19,8 +19,12 @@ displayWord();
 
 //This listener will call a function to check the input.
 const textInput = document.getElementById('text-input');
+let countDown = time;
 
-textInput.addEventListener('input', checkInput); //Passing the  checkInput function, so don't have to type checkInput().
+textInput.addEventListener('input', () => {
+  checkInput();
+  startTimer();
+}); //Start the timer and checkInput function once the user starts typing.
 
 function checkInput() {
   const userInput = textInput.value;
@@ -35,4 +39,20 @@ function checkInput() {
     const scoreDisplay = document.getElementById('score-value');
     scoreDisplay.textContent = score;
   }
+}
+
+
+//Timer
+const timeDisplay = document.getElementById('time');
+
+function startTimer() {
+  if (countDown === time) {const timer = setInterval(() => {
+    countDown--;
+    timeDisplay.textContent = countDown;
+
+    if(countDown === 0) {
+      clearInterval(timer);
+    }
+
+  }, 1000);}
 }
