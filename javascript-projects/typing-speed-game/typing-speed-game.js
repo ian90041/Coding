@@ -5,15 +5,15 @@ const words =[
   "tangerine", "watermelon"
 ];
 
-let wordIndex = 0;
 let score = 0;
 let time = 60;
-
+let randomIndex;
 
 // Function to display a new word
 function displayWord() {
   const wordDisplay = document.getElementById('word-display');
-  wordDisplay.textContent = words[wordIndex];
+  randomIndex = Math.floor(Math.random() * words.length);
+  wordDisplay.textContent = words[randomIndex];
 }
 
 displayWord();
@@ -31,12 +31,12 @@ textInput.addEventListener('input', () => {
 
 function checkInput() {
   const userInput = textInput.value;
-  const expectedText = words[wordIndex];
+  const expectedText = words[randomIndex];
 
   //Compare user input to the expected text.
   if (userInput === expectedText) {
     score++;
-    wordIndex++; // Move to the next word
+    
     textInput.value = ''; // Clear the input field
     displayWord(); // Display the next word
     const scoreDisplay = document.getElementById('score-value');
