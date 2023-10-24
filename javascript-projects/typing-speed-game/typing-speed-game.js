@@ -9,6 +9,7 @@ let wordIndex = 0;
 let score = 0;
 let time = 60;
 
+
 // Function to display a new word
 function displayWord() {
   const wordDisplay = document.getElementById('word-display');
@@ -19,11 +20,13 @@ displayWord();
 
 //This listener will call a function to check the input.
 const textInput = document.getElementById('text-input');
-let countDown = time;
+let timer;
 
 textInput.addEventListener('input', () => {
   checkInput();
-  startTimer();
+  if(!timer){
+    startTimer();
+  }
 }); //Start the timer and checkInput function once the user starts typing.
 
 function checkInput() {
@@ -43,16 +46,19 @@ function checkInput() {
 
 
 //Timer
-const timeDisplay = document.getElementById('time');
+function updateTimer() {
+  const timeDisplay = document.getElementById('time');
+  timeDisplay.textContent = time;
+}
 
 function startTimer() {
-  if (countDown === time) {const timer = setInterval(() => {
-    countDown--;
-    timeDisplay.textContent = countDown;
-
-    if(countDown === 0) {
+  timer = setInterval(() => {
+    time--;
+    if (time === 0) {
       clearInterval(timer);
+      alert(`Game Over! Your WPM: ${score}`);
     }
-
-  }, 1000);}
+    updateTimer();
+  }, 1000);
 }
+
