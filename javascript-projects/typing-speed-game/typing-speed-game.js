@@ -57,8 +57,26 @@ function startTimer() {
     if (time === 0) {
       clearInterval(timer);
       alert(`Game Over! Your WPM: ${score}`);
+      playAgainButton.style.display = 'block';
     }
     updateTimer();
   }, 1000);
 }
+
+//Play Again button
+
+const playAgainButton = document.getElementById('play-again');
+
+playAgainButton.addEventListener('click', () => {
+  //Reset state
+  time = 60;
+  score = 0;
+  displayWord();
+  updateTimer();
+
+  //Start a new game
+  startTimer();
+  playAgainButton.style.display = 'none';
+});
+
 
