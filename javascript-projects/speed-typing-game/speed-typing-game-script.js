@@ -28,4 +28,11 @@ function updateTimer() {
   }
 }
 
-updateTimer();
+//Listen to the input event
+const playerInput = document.getElementById('userInput');
+playerInput.addEventListener('input', () => {
+  if (timer === 60) {
+    updateTimer();
+  }
+})
+
