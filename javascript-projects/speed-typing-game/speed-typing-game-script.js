@@ -14,3 +14,18 @@ function displayWord() {
 }
 
 displayWord();
+
+//Timer
+let timer = 60;
+
+function updateTimer() {
+  const countdown = document.getElementById('timer');
+  countdown.textContent = timer + ' s';
+
+  if (timer > 0) {
+    timer--;
+    setTimeout(updateTimer, 1000);
+  }
+}
+
+updateTimer();
