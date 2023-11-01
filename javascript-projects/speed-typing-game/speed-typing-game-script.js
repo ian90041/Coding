@@ -1,19 +1,26 @@
-//wordLIst
-const words =[
-  "apple", "banana", "cherry", "date", "elderberry", "fig", "grape", "honeydew",
-  "kiwi", "lemon", "mango", "orange", "papaya", "quince", "raspberry", "strawberry",
-  "tangerine", "watermelon"
-];
+// URL of the API
+const RANDOM_QUOTE_API_URL = 'https://api.quotable.io/random';
 
-//wordDisplay
-function displayWord() {
-  const wordDisplay = document.getElementById('wordDisplay');
-  const randomIndex = Math.floor(Math.random() * words.length);
-  const randomWord = words[randomIndex];
-  wordDisplay.textContent = randomWord;
+// Function to fetch and display a random quote
+function displayRandomQuote() {
+  fetch(RANDOM_QUOTE_API_URL)
+    .then(response => response.json()) // Parse the JSON response
+    .then(data => {
+      // Access the data and display it in your HTML or do something with it
+      const quoteContent = data.content;
+      const author = data.author;
+
+      // Example: Display the quote in an HTML element with id "quoteDisplay"
+      const quoteDisplayElement = document.getElementById('quoteDisplay');
+      quoteDisplayElement.textContent = `"${quoteContent}" - ${author}`;
+    })
+    .catch(error => {
+      console.error('Error fetching data:', error);
+    });
 }
 
-displayWord();
+// Call the function to display a random quote
+displayRandomQuote();
 
 //Timer
 let timer = 60;
