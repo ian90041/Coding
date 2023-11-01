@@ -12,7 +12,7 @@ function displayRandomQuote() {
 
       // Example: Display the quote in an HTML element with id "quoteDisplay"
       const quoteDisplayElement = document.getElementById('quoteDisplay');
-      quoteDisplayElement.textContent = `"${quoteContent}" - ${author}`;
+      quoteDisplayElement.textContent = `${quoteContent} - ${author}`;
     })
     .catch(error => {
       console.error('Error fetching data:', error);
@@ -41,5 +41,26 @@ playerInput.addEventListener('input', () => {
   if (timer === 60) {
     updateTimer();
   }
+  checkInput();
 })
+
+//Compare the userinput to thd quoteDisplay
+
+
+function checkInput () {
+  const userInput =  playerInput.value;
+  const quoteContent = document.getElementById('quoteDisplay').textContent;
+
+  const quoteWords = quoteContent.split(' ');
+  const userWords = userInput.split(' ');
+  let score = 0;
+  
+  //Compare the words
+  for (let i = 0; i < userWords.length; i++) {
+    if (i < quoteWords.length && userWords[i] === quoteWords[i])
+    score++;
+  }
+
+  console.log(score);
+}
 
