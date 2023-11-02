@@ -36,8 +36,8 @@ function updateTimer() {
 }
 
 //Listen to the input event
-const playerInput = document.getElementById('userInput');
-playerInput.addEventListener('input', () => {
+const userInput = document.getElementById('userInput');
+userInput.addEventListener('input', () => {
   if (timer === 60) {
     updateTimer();
   }
@@ -48,11 +48,10 @@ playerInput.addEventListener('input', () => {
 
 
 function checkInput () {
-  const userInput =  playerInput.value;
   const quoteContent = document.getElementById('quoteDisplay').textContent;
 
   const quoteWords = quoteContent.split(' ');
-  const userWords = userInput.split(' ');
+  const userWords = userInput.value.split(' ');
   let score = 0;
   
   //Compare the words
@@ -63,4 +62,16 @@ function checkInput () {
 
   console.log(score);
 }
+
+//Make the input word disappear when user press 'Space'
+function eraseWord() {
+  userInput.addEventListener('keydown', (event) => {
+    if (event.key === ' ' || event.code === 'Space') {
+      userInput.value = '';
+      event.preventDefault();
+    }
+  })
+}
+
+eraseWord();
 
