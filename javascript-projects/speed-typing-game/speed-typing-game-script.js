@@ -1,5 +1,7 @@
 // URL of the API
 const RANDOM_QUOTE_API_URL = 'https://api.quotable.io/random';
+// Display the quote in an HTML element with id "quoteDisplay"
+const quoteDisplayElement = document.getElementById('quoteDisplay');
 
 // Function to fetch and display a random quote
 function displayRandomQuote() {
@@ -10,9 +12,8 @@ function displayRandomQuote() {
       const quoteContent = data.content;
       const author = data.author;
 
-      // Example: Display the quote in an HTML element with id "quoteDisplay"
-      const quoteDisplayElement = document.getElementById('quoteDisplay');
-      quoteDisplayElement.textContent = `${quoteContent} - ${author}`;
+
+      quoteDisplayElement.innerText = `${quoteContent} - ${author}`;
     })
     .catch(error => {
       console.error('Error fetching data:', error);
@@ -42,6 +43,7 @@ userInput.addEventListener('input', () => {
     updateTimer();
   }
   checkInput();
+  highlightWord(); //Update the highlighting when the user types
 })
 
 //Compare the userinput to thd quoteDisplay
@@ -74,4 +76,7 @@ function eraseWord() {
 }
 
 eraseWord();
+
+//Highlight the word which player is typing
+quoteWords = [];
 
