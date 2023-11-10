@@ -3,6 +3,7 @@ const icons = document.querySelectorAll('.icon');
 
 const moneyElement = document.getElementById('money');
 let money = 100;
+let moneyAction = '';
 
 
 const startButton = document.getElementById('startButton');
@@ -31,6 +32,7 @@ function checkWin() {
   const iconValue1 = document.getElementById('icon1').textContent;
   const iconValue2 = document.getElementById('icon2').textContent;
   const iconValue3 = document.getElementById('icon3').textContent;
+  
 
   let threeMatching = iconValue1 === iconValue2 && iconValue2 === iconValue3;
   let twoMatching = (iconValue1 === iconValue2 && iconValue2 !== iconValue3) || 
@@ -39,10 +41,23 @@ function checkWin() {
 
   if (threeMatching) {
     money += 100; //Three matching icons
+    moneyAction = '+100';
   } else if (twoMatching) {
     money += 10; //Two matching icons
+    moneyAction = '+10';
   } else {
     money -= 10; //No matching icons
+    moneyAction = '-10';
   }
-  moneyElement.textContent = `${money}`;
+  moneyElement.textContent = `$${money}`;
+
+  showHistory();
+}
+
+//List out the history
+function showHistory() {
+  const history = document.getElementById('history');
+  const historyItem = document.createElement('span');
+  historyItem.textContent = moneyAction;
+  history.appendChild(historyItem);
 }
