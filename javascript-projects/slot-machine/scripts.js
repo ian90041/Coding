@@ -57,7 +57,8 @@ function checkWin() {
 //List out the history
 function showHistory() {
   const history = document.getElementById('history');
-  const historyItem = document.createElement('span');
+  const historyItem = document.createElement('p');
   historyItem.textContent = moneyAction;
-  history.appendChild(historyItem);
+  historyItem.classList.add('history-entry');
+  history.insertBefore(historyItem, history.firstChild);
 }
